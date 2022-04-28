@@ -19,7 +19,7 @@ Automated tested is *scalable* and *can* be easy (if you know your tools).
 
 Here's a non-exhaustive list of ways tests can be useful
 
-1) tests help demonstrate softare works as intented *and continues to in the future*
+1) tests help demonstrate software works as intented *and continues to in the future*
 2) tests help catching bugs before broken code is pushed to prod
 3) tests enable refactoring
 4) tests document intented usage
