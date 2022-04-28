@@ -1,0 +1,3 @@
+# note that nose is not compatible with Python 3.10
+nose
+pytest
