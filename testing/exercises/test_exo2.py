@@ -12,6 +12,6 @@ def test_neg_repeat():
 
 def test_capitalization(capsys):
     # capitalize=True should force 'name' to be written as 'Name'
-    repeated_greetings("clément", 1, captitalize=True)
+    repeated_greetings("clément", 1, capitalize=True)
     out, err = capsys.readouterr()
-    assert out == "Hello Clément !"
+    assert out == "Hello Clément !\n"
