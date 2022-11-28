@@ -10,6 +10,7 @@ In this document, you will learn the fundamentals of version-control, and we'll 
 - synchronize your local and remote copies of a project (`git pull`, `git push`)
 - navigate the change history (`git log`, `git checkout`)
 - working with multiple branches (`git branch`, `git merge`)
+- resolve history conflict
 - visualize the current state (`git status`, `git diff`, `git branch`)
 
 Of course,mMastering `git` goes well beyond the scope of the present document.
