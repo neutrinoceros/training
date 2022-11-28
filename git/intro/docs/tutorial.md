@@ -166,12 +166,19 @@ Now we should have a more detailed history
 </p>
 
 
+
+
 ## Going back in time
 
 !!! info
 
     In this section we will learn how to *navigate* the history, i.e., visiting previous versions of the project using `git checkout`
 
+`git checkout` is the go-to command to **change the position of `HEAD` on the history tree**.
+
+<p align="center">
+<img title="one lonely branch" src="https://raw.githubusercontent.com/neutrinoceros/training/git_intro/git/intro/docs/single_branch_linear_history_annotated_2.png">
+</p>
 
 
 ## Branching out
