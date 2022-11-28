@@ -1,4 +1,4 @@
-# Git Fundamentals
+# Home
 
 ## Scope
 This is a simple introduction to `git`.

@@ -152,4 +152,40 @@ There we see all our most recent commits (just one in this case).
 
 !!! abstract "Excercise"
 
-    Repeat the last few steps (add new files to the index, and commit them)
+    Repeat the last few steps: add new files to the index, and commit them
+
+
+!!! bug "TODO"
+    demonstrate how to modify already tracked files (into `git add -u`)
+
+
+Now we should have a more detailed history
+
+<p align="center">
+<img title="one lonely branch" src="https://raw.githubusercontent.com/neutrinoceros/training/git_intro/git/intro/docs/single_branch_linear_history_annotated_1.png">
+</p>
+
+
+## Going back in time
+
+!!! info
+
+    In this section we will learn how to *navigate* the history, i.e., visiting previous versions of the project using `git checkout`
+
+
+
+## Branching out
+
+!!! info
+
+    In this section we will learn how to use history *branches*, which are a central and powerful concept
+    at the heart of most development workflows.
+
+
+<p align="center">
+<img title="thinking in branches (HEAD on branch)" src="https://raw.githubusercontent.com/neutrinoceros/training/git_intro/git/intro/docs/multi_branch_history_annotated_1.png">
+</p>
+
+<p align="center">
+<img title="thinking in branches (HEAD on main)" src="https://raw.githubusercontent.com/neutrinoceros/training/git_intro/git/intro/docs/multi_branch_history_annotated_2.png">
+</p>
