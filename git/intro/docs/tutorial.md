@@ -30,13 +30,18 @@ $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
 
+### Additional recommendations
+
 It is also recommended to associate a terminal-based editor of your choice to `git`.
 For instance this is how you'd set `nano`
 ```
 $ git config --global core.editor nano
 ```
-This is because some advanced sub-commands require an editor, and its preferable to
-know that you are confortable with the one you get (otherwise it may default to `vi`)
+This is because some advanced sub-commands require an editor, and its preferable
+to know that you are confortable with the one you get (otherwise it may default
+to `vi`, which is infamously hard to exit when you've never used it).
+
+It it recommended that to sign up on GitHub.
 
 ### Getting started (first commits)
 > In this section we will create a dummy project *from scratch*. You can use an
@@ -71,7 +76,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 Now let's start by creating some file
 ```
-$ echo "Hello world !" > README.md
+$ echo "Hello world !" > README.txt
 ```
 
 and see how this affects the state
@@ -84,7 +89,7 @@ No commits yet
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-    README.md
+    README.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -94,7 +99,7 @@ We see that the file we just created is currently *untracked*, meaning its evolu
 The output of `git status` also contains a helpful hint at what to do next to start tracking it:
 
 ```
-$ git add README.md
+$ git add README.txt
 ```
 <details><summary> git status </summary>
 ```
@@ -104,15 +109,37 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-    new file:   README.md
+    new file:   README.txt
 ```
 </details>
 
-We see that `README.md` is now being *tracked* by the system, but it is not *commited* yet, meaning we haven't created an actual *version* (or *commit*, from now on) in the history. So let's do just that
+We see that `README.txt` is now being *tracked* by the system, but it is not *commited* yet, meaning we haven't created an actual *version* (or *commit*, from now on) in the history. So let's do just that
 
 ```
-$ git commit -m "Add README.md"
+$ git commit -m "Add README.txt"
 ```
 
 with `-m`, with associate a *message* to our commit.
 The message should be *concise* yet *meaningful* and describe the change that was performed.
+
+<details><summary> git status </summary>
+```
+On branch main
+nothing to commit, working tree clean
+```
+</details>
+
+Hurray ! Now `README.txt` is being tracked by `git` *and* we have a history that should look something like this
+
+<img title="one lonely commit" src="https://raw.githubusercontent.com/neutrinoceros/training/git_intro/git/intro/docs/single_commit_history.png">
+
+
+<details><summary> git log </summary>
+```
+commit 956206c5db49848047ef45161ed9e457dcb5f9a8 (HEAD -> main)
+Author: John Doe <johndoe@example.com>
+Date:   Mon Nov 28 15:22:38 2022 +0100
+
+    Add README.txt
+```
+</detail>
