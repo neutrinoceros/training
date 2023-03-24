@@ -34,7 +34,7 @@ This is an introduction to OOP in Python. The reader is assumed to be familiar w
     + [Enums](#enums)
     + [Custom exceptions](#custom-exceptions)
   * ["selfless" methods (`classmethod`, `staticmethod`)](#selfless-methods-classmethod-staticmethod)
-  * [More runtime "type checking" (`hasattr`, `getattr`)](#more-runtime-type-checking-hasattr-getattr)
+  * [More runtime "type checking" (`hasattr`, `getattr`, `setattr`)](#more-runtime-type-checking-hasattr-getattr-setattr)
 
 <!-- tocstop -->
 
@@ -325,7 +325,7 @@ Another reason to use properties is if some attributes are meant to be mutated b
 ```python
 class Rectangle:
     def __init__(self, width: float, height: float) -> None:
-        self.width = witdth
+        self.width = width
         self.height = height
 
     @property
@@ -515,7 +515,7 @@ Taking again the example from a couple sections back
 ```python
 class Rectangle:
     def __init__(self, width: float, height: float) -> None:
-        self.width = witdth
+        self.width = width
         self.height = height
 
     @property
@@ -543,7 +543,7 @@ class Square(Rectangle):
 
     @property
     def width(self) -> float:
-        return self.width
+        return self.size
 ```
 
 In this approach *a square could not be used everywhere a rectangle can*, so we'd have to use conditionals:
@@ -786,14 +786,14 @@ def _parse(s: str) -> str:
 ```
 but wait, if this method doesn't know about instances *or* the class, *why* should it be in the class at all, couldn't this be a good ol' function ? Often, `@staticmethod` is used to decorate functions that don't make sense outside the class, and are private helper functions. It's just one more tool to organize your code freely and with clear declaration of intent.
 
-## More runtime "type checking" (`hasattr`, `getattr`)
+## More runtime "type checking" (`hasattr`, `getattr`, `setattr`)
 > ⚠️ The functions covered here should be approached with caution and avoided as much as possible, as they often hint to LSP-violation. However there are some valid use cases for them such as backward-compatibility, and dark-magic™️.
 
-`hasattr` is builtin method that checks whether an arbitrary object has an attribute with a given name. This is sometimes useful to implement dark-magic where attributes must be discovered programatically, as in the following (silly) example
+`hasattr` and `getattr` are builtin methods that check whether an arbitrary object has an attribute with a given name, and access it, respectively. They are sometimes useful to implement dark-magic where attributes must be discovered programatically, as in the following (silly) example
 ```python
 for name in ["furr", "teeth", "claws"]:
     if hasattr(x, name):
-        value = x.name
+        value = getattr(x, name)
     else:
         value = "(none)"
     print(f"x.{name} = {value}")
@@ -808,8 +808,5 @@ else:
 print(f"x.furr = {value}")
 ```
 
-Finally, `getattr` is yet-another builtin function that doesn't add much on top of `hasattr`, but may be used for simplicity. For instance, we can use it to rewrite our primary example for `hasattr` as
-```python
-for name in ["furr", "teeth", "claws"]:
-    print(f"x.{name} = {getattr(x, name, '(none)')}")
-```
+Finally, `setattr` is yet-another builtin function can be utilized to programmatically set attributes by name.
+Again, this is rarely the right approach, but it can come in handy sometimes.
