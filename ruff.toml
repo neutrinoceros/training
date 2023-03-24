@@ -1,0 +1,16 @@
+target-version = "py38"
+exclude = ["*__init__.py"]
+ignore = [
+    "E501",
+    "F401", # unused import, deliberate
+]
+select = [
+    "E",
+    "F",
+    "W",
+    "B",
+    "I",
+]
+
+[isort]
+combine-as-imports = true
