@@ -96,15 +96,16 @@ fixture passed as arguments to a test function
 ```python
 import pytest
 
+
 @pytest.fixture()
 def hello_goodbye():
     print("Hi !")
     yield
     print("Goodbye !")
 
+
 def test_stuff(hello_goodbye):
     assert 1 == 1
-
 ```
 
 Alternatively, when the return value of the fixture isn't used within a test, it
@@ -128,8 +129,10 @@ Testing for ill cases helps making sure error messages are clear.
 ```python
 import pytest
 
+
 def foo():
-   raise ValueError("don't call this function")
+    raise ValueError("don't call this function")
+
 
 def test_error():
     with pytest.raises(
