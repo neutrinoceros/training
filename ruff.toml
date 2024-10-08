@@ -1,10 +1,10 @@
 target-version = "py38"
 exclude = ["*__init__.py"]
-ignore = [
+lint.ignore = [
     "E501",
     "F401", # unused import, deliberate
 ]
-select = [
+lint.select = [
     "E",
     "F",
     "W",
@@ -12,5 +12,5 @@ select = [
     "I",
 ]
 
-[isort]
+[lint.isort]
 combine-as-imports = true
