@@ -15,7 +15,7 @@ repos:
   - id: check-toml
 
 - repo: https://github.com/Lucas-C/pre-commit-hooks
-  rev: v1.5.5
+  rev: v1.5.6
   hooks:
   - id: remove-tabs
 
@@ -25,7 +25,7 @@ repos:
   - id: markdown-toc
 
 - repo: https://github.com/psf/black-pre-commit-mirror
-  rev: 25.12.0
+  rev: 26.3.1
   hooks:
   - id: black-jupyter
 
@@ -36,18 +36,18 @@ repos:
     additional_dependencies: [black==23.1.0]
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.14.10
+  rev: v0.15.9
   hooks:
   - id: ruff-check
     types_or: [python, pyi]
 
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.19.1
+  rev: v1.20.0
   hooks:
   - id: mypy
 
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-  rev: v2.15.0
+  rev: v2.16.0
   hooks:
   - id: pretty-format-yaml
     args: [--autofix, --indent, '2']
