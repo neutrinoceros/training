@@ -2,7 +2,9 @@ target-version = "py38"
 exclude = ["*__init__.py"]
 lint.ignore = [
     "E501",
+    "E722", # bare-except, deliberate
     "F401", # unused import, deliberate
+    "B018", # useless-expression, deliberate
 ]
 lint.select = [
     "E",
